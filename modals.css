@@ -1,0 +1,67 @@
+.close:hover{
+    cursor: pointer;
+    color: red;
+}
+fieldset div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: small;
+    gap: 10px;
+}
+input:not([type=radio]):not([type=submit]){
+    border: none;
+    border-bottom: 1px solid #747171;
+    text-align: center;
+    width: 70%;
+    
+}
+input[type=date],input[type=time]{
+    width: 20%!important;
+}
+input:focus{
+    outline: none;
+    border-bottom: 1px solid #6464a8;
+}
+input:disabled,textarea:disabled  {
+    background-color: transparent;
+    color: black;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.additional-info input[type=number]{
+    width: 38%!important;
+}
+textarea{
+    font-size: 12px;
+}
+.charges input{
+    width: 100% !important;
+    text-align: start;
+}
+table th{
+    font-size: 12px;
+    padding: 2px;    
+}
+table td{
+    padding: 2px 4px;    
+}
+
+table input{
+    border: none!important;
+    font-size: 10px;
+    width: 100%!important;
+}
+.add-button i{
+    font-size: 12px;
+}
+.view-additional-info > div input{
+    width: 60%!important;
+}
+.ViewPartsTable td{
+    max-width: 200px;
+    height: 15px; 
+}
