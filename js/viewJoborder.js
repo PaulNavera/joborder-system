@@ -2,33 +2,10 @@ $(document).ready(function(){
     $('#jobOrderModal').on('hidden.bs.modal', function () {
 
     
-        const radioBtn =` <div class="radio-btn">
-                                    <div id="warrantyWrapper">
-                                        <div >
-                                            <input type="radio" id="under_warranty" name="warranty" value="Under Warranty">
-                                            <label for="under-warranty">Under Warranty</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" id="out_warranty" name="warranty" value="Out of Warranty">
-                                            <label for="out-warranty">Out of warranty</label>
-                                        </div>
-                                    </div>
-                                    <div id="siteWrapper">
-                                        <div>
-                                            <input type="radio" id="on_site" name="site" value="On-Site">
-                                            <label for="on_site">On-Site</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" id="in_house" name="site" value="In-House">
-                                            <label for="in_house">In-House</label>
-                                        </div>
-                                    </div>
-                            </div>`;
-                        
         const selectOptions =`<div class="mb-2" id="selectOptions"> 
                                     <div>
                                         <label for="technician">Technician:</label>
-                                        <select name="technician" id="technician">
+                                        <select name="technician" id="technician" required>
                                             <option value="" disabled selected>Select</option>
                                             <option value="Paul Aldrin">Paul Aldrin Navera</option>
                                             <option value="Reginald">Reginald Jesse De Guzman</option>
@@ -44,12 +21,38 @@ $(document).ready(function(){
                                     </div>
                                    
                             </div>`;
+                             
+        const radioBtn =` <div class="radio-btn" id="radioBtn">
+                            <div id="warrantyWrapper">
+                                <div >
+                                    <input type="radio" id="under_warranty" name="warranty" value="Under Warranty">
+                                    <label for="under-warranty">Under Warranty</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="out_warranty" name="warranty" value="Out of Warranty" checked>
+                                    <label for="out-warranty">Out of warranty</label>
+                                </div>
+                            </div>
+                            <div id="siteWrapper">
+                                <div>
+                                    <input type="radio" id="on_site" name="site" value="On-Site" >
+                                    <label for="on_site">On-Site</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="in_house" name="site" value="In-House" checked>
+                                    <label for="in_house">In-House</label>
+                                </div>
+                            </div>
+                        </div>`;
+
+
                         
                         
         $('#jobOrderForm')[0].reset();
         $('input, select, textarea').prop('disabled', false);
         $('#selectOptions').replaceWith(selectOptions);
         $('#radioBtn').replaceWith(radioBtn);
+        $('#addPartsButton').show();
 
     });
 });
@@ -57,7 +60,24 @@ $(document).ready(function(){
 
 $('#joborderTable tbody').on('click', '.viewBtn', function() {
     const jobId = $(this).data('id');
+    
+    
     let viewBtnclicked = true; 
+    const radioBtn = ` <div class="radio-btn" id="radioBtn">
+                                    <div id="warrantyWrapper">
+                                        <label for="warranty">Warranty:</label>
+                                        <input type="text" id="warranty" name="warranty">
+                                    </div>
+                                    <div id="siteWrapper">
+                                        <label for="warranty">Site:</label>
+                                        <input type="text" id="site" name="site">
+                                    </div>
+                        </div>`;
+    
+    $('#radioBtn').remove();
+
+    $('#time').after(radioBtn);
+
 
     $.ajax({
         url: 'fetch_single_data.php', 
@@ -71,21 +91,12 @@ $('#joborderTable tbody').on('click', '.viewBtn', function() {
                 
                 const tech = $('<input type="text" id="technician" />').val(response[0].technician);
                 const status = $('<input type="text" id="status" />').val(response[0].status);
-                const radioBtn = ` <div class="radio-btn" id="radioBtn">
-                                        <div id="warrantyWrapper">
-                                            <label for="warranty">Warranty:</label>
-                                            <input type="text" id="warranty" name="warranty">
-                                        </div>
-                                        <div id="siteWrapper">
-                                            <label for="warranty">Site:</label>
-                                            <input type="text" id="site" name="site">
-                                        </div>
-                                    </div>`;
+                
 
                 $('#jobOrderModal').modal('show');                
-                $('#radioBtn').replaceWith(radioBtn);
+                
 
-                $('#addButton').hide();
+                $('#addPartsButton').hide();
 
                 $('#ModalLabel').text("View Job Order [#"+response[0].job_order_id+']');
                 $('#company').val(response[0].company);

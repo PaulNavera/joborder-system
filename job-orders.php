@@ -45,10 +45,10 @@
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="jquery/jquery-3.7.1.min.js"></script>    
     <script src="DataTables/datatables.min.js"></script>
-    <script src="js/fetch-data.js"></script>
-    <script src="js/delete-joborder.js"></script>
-    <script src="js/update-joborder.js"></script>
-    <script src="js/viewJoborder.js"></script>
+    <script src="js/fetchData.js"></script>
+    <script src="js/deleteJobOrder.js"></script>
+    <script src="js/updateJobOrder.js"></script>
+    <script src="js/viewJobOrder.js"></script>
 
 
     

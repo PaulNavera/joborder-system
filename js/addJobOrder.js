@@ -3,36 +3,14 @@ $(document).ready(function(){
 
     $('#addJobOrderBtn').click(function(){
 
+        
+        
+
         $('#jobOrderModal').modal('show');
         $('#ModalLabel').text("Add Job Order");
+       
 
-        const warranty = ` <div id="warrantyWrapper">
-                                        <div >
-                                            <input type="radio" id="under_warranty" name="warranty" value="Under Warranty">
-                                            <label for="under-warranty">Under Warranty</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" id="out_warranty" name="warranty" value="Out of Warranty">
-                                            <label for="out-warranty">Out of warranty</label>
-                                        </div>
-                            </div>`;
-        const site =  `<div id="siteWrapper">
-                                        <div>
-                                            <input type="radio" id="on_site" name="site" value="On-Site">
-                                            <label for="on_site">On-Site</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" id="in_house" name="site" value="In-House">
-                                            <label for="in_house">In-House</label>
-                                        </div>
-                        </div>`;      
-                        
-                        
     
-        $('#warrantyWrapper').replaceWith(warranty);
-        $('#siteWrapper').replaceWith(site);
-
-
     });
 
     $('#jobOrderModal').on('hidden.bs.modal', function () {
@@ -56,7 +34,6 @@ $(document).ready(function(){
         $("#partsTable tbody").append(newRow);
     });
 
- $(".charge").change(function(){
         
     $(".charge").change(function(){
         
@@ -75,7 +52,7 @@ $(document).ready(function(){
         $("#totalAmount").val(total);
     });
 
-        });
+       
 
 
 $(".parts").change(function(){

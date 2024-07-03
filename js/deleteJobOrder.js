@@ -1,7 +1,7 @@
 $('#joborderTable tbody').on('click', '.deleteBtn', function() {
     var jobId = $(this).data('id');
     $('#deleteJobOrderModal').data('jobOrderId', jobId).modal('show');
-    $("#modalBody").text(`Are you sure you want to delete Job Order[#${jobId}]"?`);
+    $("#modalBody").text(`Are you sure you want to delete Job Order[#${jobId}]?`);
 });
 
 // Confirm delete button click event

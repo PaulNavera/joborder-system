@@ -73,7 +73,7 @@
                                 <div class="mb-2" id="selectOptions"> 
                                     <div>
                                         <label for="technician">Technician:</label>
-                                        <select name="technician" id="technician">
+                                        <select name="technician" id="technician" required>
                                             <option value="" disabled selected>Select</option>
                                             <option value="Paul Aldrin">Paul Aldrin Navera</option>
                                             <option value="Reginald">Reginald Jesse De Guzman</option>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div>
                                         <label for="status">Status:</label>
-                                        <select name="status" id="status">
+                                        <select name="status" id="status" required>
                                             <option value="Under Repair">Under Repair</option>
                                             <option value="Claimable">Claimable</option>
                                             <option value="Claimed">Claimed</option>
@@ -91,15 +91,15 @@
                                 </div>
                                 <div class="mb-2">
                                     <label for="start_date"> Start Date:</label>
-                                    <input type="date" id="start_date" name="start_date" >
+                                    <input type="date" id="start_date" name="start_date" required >
 
                                     <label for="finished_date">Date Finished:</label>
                                     <input type="date" id="finished_date" name="finished_date" >
                                 </div>
 
-                                <div class="mb-2">
+                                <div class="mb-2" id="time"  >
                                     <label for="time_in">Time-In:</label>
-                                    <input type="time" id="time_in" name="time_in" >
+                                    <input type="time" id="time_in" name="time_in" required>
 
                                     <label for="time_out">Time-Out:</label>
                                     <input type="time" id="time_out" name="time_out" >
@@ -107,11 +107,11 @@
                                 <div class="radio-btn" id="radioBtn">
                                     <div id="warrantyWrapper">
                                         <div >
-                                            <input type="radio" id="under_warranty" name="warranty" value="Under Warranty">
-                                            <label for="under-warranty">Under Warranty</label>
+                                            <input type="radio" id="under_warranty" name="warranty" value="Under Warranty" >
+                                            <label for="under-warranty" >Under Warranty</label>
                                         </div>
                                         <div>
-                                            <input type="radio" id="out_warranty" name="warranty" value="Out of Warranty">
+                                            <input type="radio" id="out_warranty" name="warranty" value="Out of Warranty" checked>
                                             <label for="out-warranty">Out of warranty</label>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@
                                             <label for="on_site">On-Site</label>
                                         </div>
                                         <div>
-                                            <input type="radio" id="in_house" name="site" value="In-House">
+                                            <input type="radio" id="in_house" name="site" value="In-House" checked>
                                             <label for="in_house">In-House</label>
                                         </div>
                                     </div>
@@ -264,6 +264,6 @@
 <script src="alertify/alertify.min.js"></script>
 <script src="DataTables/datatables.min.js"></script>
 <script src="js/addJobOrder.js"></script>
-<script src="js/delete-joborder.js"></script>
-<script src="js/update-joborder.js"></script>
-<script src="js/viewJoborder.js"></script>
+<script src="js/deleteJobOrder.js"></script>
+<script src="js/updateJobOrder.js"></script>
+<script src="js/viewJobOrder.js"></script>
