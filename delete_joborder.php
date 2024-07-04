@@ -4,12 +4,8 @@ include("dbcon.php");
 
 $jobOderId = $_POST['jobId'];
 
-$response = [
-    'success' => false,
-    'message' => 'Error deleting items.'
-];
+$response = array();
 
-// Define SQL queries for each table
 $deleteQueries = [
     "DELETE FROM customers WHERE job_order_id = :jobId",
     "DELETE FROM units WHERE job_order_id = :jobId",
@@ -18,7 +14,6 @@ $deleteQueries = [
 ];
 
 try {
-    // Start a transaction
     $pdo->beginTransaction();
 
     foreach ($deleteQueries as $query) {
@@ -27,15 +22,14 @@ try {
         $stmt->execute();
     }
 
-    // Commit the transaction
     $pdo->commit();
 
     $response = [
         'success' => true,
-        'message' => 'Items deleted successfully.'
+        'message' => 'Job order[#'.$jobOderId.'] deleted successfully.'
     ];
 } catch (PDOException $e) {
-    // Rollback the transaction on error
+
     $pdo->rollBack();
 
     $response = [

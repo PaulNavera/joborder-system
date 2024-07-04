@@ -1,4 +1,5 @@
 
+
 $(document).ready(function(){
 
     $('#addJobOrderBtn').click(function(){
@@ -110,8 +111,6 @@ function printPDF(data){
                 contentType: 'application/json',
                 success:function(response)
                 {
-                    console.log(response);
-        
                     
                 },
                 error: function(xhr, status, error){
@@ -126,7 +125,8 @@ function printPDF(data){
         } 
     
           
-$(document).on('submit', '#addForm', function(e){
+$(document).on('submit', '#jobOrderForm', function(e){
+
         e.preventDefault();                           
 
         let parts = getParts();
@@ -152,19 +152,18 @@ $(document).on('submit', '#addForm', function(e){
                 dataType: 'json',
                 success:function(response)
                 {
-                    console.log(response);
 
                     if(response.success){
   
-                        alert("Job Order saved!");                       
-                        $('#addJobOrderModal').modal('hide');
+                        alertify.success("Job Order saved!");                       
                         $('#joborderTable').DataTable().ajax.reload();
+                        $('#jobOrderModal').modal('hide');
                         printPDF(response);
 
                     }
                     else{
-                        alert("Job Order not saved!");                        
-                        $('#addJobOrderModal').modal('hide');
+                        alertify.error("Job Order not saved!");                       
+                        $('#jobOrderModal').modal('hide');
                     }
                     
                 },

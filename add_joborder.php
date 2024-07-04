@@ -24,7 +24,7 @@ include ("dbcon.php");
     $site=$_POST['site'];
     $service_charge=$_POST['serviceCharge'];
     $transportation_charge=$_POST['transportationCharge'];
-    $lodging_allowance=$_POST['lodgingAllowance'];
+    $allowance=$_POST['lodgingAllowance'];
     $other_charges=$_POST['otherCharges'];
     
     $parts = json_decode($_POST['parts']);
@@ -48,8 +48,6 @@ try {
         $stmt->bindParam(':start_date',$start_date);
 
      
-       
-     
 
     if($stmt->execute()){
     
@@ -72,7 +70,7 @@ try {
             'jobOrderId'=> $job_order_id,
             'name' =>  $name,
             'date' => $start_date,
-            'unit' => $unit
+            'unit' => $brand.' '.$model
          );
 
         if($stmt->execute()){
@@ -105,7 +103,7 @@ try {
                             'jobOrderId'=> $job_order_id,
                             'name' =>  $name,
                             'date' => $start_date,
-                            'unit' => $unit
+                            'unit' => $brand.' '.$model
                          );
                                     }
                     else {

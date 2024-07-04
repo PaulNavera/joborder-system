@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="modals.css">
+<link rel="stylesheet" href="alertify/css/alertify.min.css">
 
 <!--Add modal-->
 <div class="modal fade" id="jobOrderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

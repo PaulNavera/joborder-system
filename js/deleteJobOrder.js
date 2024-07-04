@@ -7,23 +7,26 @@ $('#joborderTable tbody').on('click', '.deleteBtn', function() {
 // Confirm delete button click event
 $('#confirmDeleteBtn').on('click', function() {
     var jobId = $('#deleteJobOrderModal').data('jobOrderId');
+
     $.ajax({
         type: 'POST',
         url: 'delete_joborder.php', 
         data: { jobId: jobId },
         dataType: 'json',
         success: function(response) {
+            
             if (response.success) {
-                alert(response.message);
-                $('#deleteJobOrderModal').modal('hide');
+
+                alertify.success(response.message);
                 $('#joborderTable').DataTable().ajax.reload();
+                $('#deleteJobOrderModal').modal('hide');
             } else {
-                alert(response.message);
+                alertify.error(response.message);
             }
         },
         error: function(xhr, status, error) {
             console.error(xhr.responseText);
-            alert("An error occurred while deleting the item. Please try again.");
+             alertify.error("An error occurred while deleting the item. Please try again.");
         }
     });
 });
