@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.min.css">
     <link rel="stylesheet" href="DataTables/datatables.css" />
- 
-    <title>Zhuren Tech Solutions</title>
+
+    <title>Zhuren Job Order System</title>    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 <body>
     
