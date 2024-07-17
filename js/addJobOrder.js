@@ -134,12 +134,19 @@ $(document).on('submit', '#jobOrderForm', function(e){
         let warranty = $('input[name="warranty"]:checked').val();
         let technician = $("#technician").val();
         let status = $("#status").val();
+
+        let dateTime = new Date();
+        let startDate = `${dateTime.getFullYear()}-${dateTime.getMonth()}-${dateTime.getDate()}`;
+        let timeIn = `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()}`;
+       
         let formData = new FormData(this);
         
         formData.append("site",site);
         formData.append("warranty",warranty);
         formData.append("technician",technician);
         formData.append("status",status);
+        formData.append("start_date",startDate);
+        formData.append("time_in",timeIn);
         formData.append("parts",JSON.stringify(parts));
 
         

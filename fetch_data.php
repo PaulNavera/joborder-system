@@ -62,7 +62,7 @@ try{
 
     $totalFiltered = count($results);
 
-        // Sorting
+    // Sorting
     $sortColumn = $columns[$requestData['order'][0]['column']]['db'];
     $sortDirection = $requestData['order'][0]['dir'];
     usort($results, function($a, $b) use ($sortColumn, $sortDirection) {
@@ -77,24 +77,28 @@ try{
     // Format data as required by DataTables
     $data = array();
     foreach ($results as $row) {
-    $data[] = array(
-        'job_order_id' => $row['job_order_id'],
-        'company' => $row['company'],
-        'name' => $row['name'],
-        'address' => $row['address'],
-        'contact' => $row['contact'],
-        'site' => $row['site'],
-        'time_in' => $row['time_in'],
-        'start_date' => $row['start_date'],
-        'unit' =>  $row['unit'],
-        'brand' =>  $row['brand'],
-        'warranty' => $row['warranty'],
-        'status' =>  $row['status'],
-        'action' => '<button type="button" class="btn btn-info btn-sm viewBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-eye"></i></button>' .
-        ' <button type="button" class="btn btn-primary btn-sm editBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-pen-to-square"></i></button>' .
-        ' <button type="button" class="btn btn-danger btn-sm deleteBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-trash"></i></button>'
 
-    );
+        $startDate = new DateTime($row['start_date']);
+        $timeIn = new DateTime($row['time_in']);
+
+        $data[] = array(
+            'job_order_id' => $row['job_order_id'],
+            'company' => $row['company'],
+            'name' => $row['name'],
+            'address' => $row['address'],
+            'contact' => $row['contact'],
+            'site' => $row['site'],
+            'time_in' => $timeIn->format('h:i A'),
+            'start_date' => $startDate->format('m/d/Y'),
+            'unit' =>  $row['unit'],
+            'brand' =>  $row['brand'],
+            'warranty' => $row['warranty'],
+            'status' =>  $row['status'],
+            'action' => '<button type="button" class="btn btn-info btn-sm viewBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-eye"></i></button>' .
+            ' <button type="button" class="btn btn-primary btn-sm editBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-pen-to-square"></i></button>' .
+            ' <button type="button" class="btn btn-danger btn-sm deleteBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-trash"></i></button>'
+
+        );
     }
 
     $response = array(

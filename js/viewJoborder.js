@@ -60,9 +60,8 @@ $(document).ready(function(){
 
 $('#joborderTable tbody').on('click', '.viewBtn', function() {
     const jobId = $(this).data('id');
+    const btn = 'View';
     
-    
-    let viewBtnclicked = true; 
     const radioBtn = ` <div class="radio-btn" id="radioBtn">
                                     <div id="warrantyWrapper">
                                         <label for="warranty">Warranty:</label>
@@ -74,66 +73,10 @@ $('#joborderTable tbody').on('click', '.viewBtn', function() {
                                     </div>
                         </div>`;
     
-    $('#radioBtn').remove();
-
-    $('#time').after(radioBtn);
+    $('#radioBtn').replaceWith(radioBtn);
 
 
-    $.ajax({
-        url: 'fetch_single_data.php', 
-        type: 'POST',
-        dataType: 'json',
-        data: { job_order_id: jobId },
-        success: function(response) {
-            
-            if (response && viewBtnclicked) {
-               
-                
-                const tech = $('<input type="text" id="technician" />').val(response[0].technician);
-                const status = $('<input type="text" id="status" />').val(response[0].status);
-                
-
-                $('#jobOrderModal').modal('show');                
-                
-
-                $('#addPartsButton').hide();
-
-                $('#ModalLabel').text("View Job Order [#"+response[0].job_order_id+']');
-                $('#company').val(response[0].company);
-                $('#name').val(response[0].name);
-                $('#address').val(response[0].address);
-                $('#contact').val(response[0].contact);
-                $('#email').val(response[0].email);
-                $('#messenger').val(response[0].messenger);
-                $('#unit').val(response[0].unit);
-                $('#brand').val(response[0].brand);
-                $('#model').val(response[0].model);
-                $('#serial').val(response[0].serial);
-                $('#reportsInstructions').val(response[0].reports_instructions);
-                $('#technician').replaceWith(tech);
-                $('#status').replaceWith(status);
-                $('#start_date').val(response[0].start_date);
-                $('#finished_date').val(response[0].finished_date);
-                $('#time_in').val(response[0].time_in);
-                $('#start_date').val(response[0].start_date);
-                $('#warranty').val(response[0].warranty);
-                $('#site').val(response[0].site);
-                $('#serviceCharge').val(response[0].service_charge);
-                $('#transportationCharge').val(response[0].transportation_charge);
-                $('#lodgingAllowance').val(response[0].allowance);
-                $('#otherCharges').val(response[0].other_charges);
-                $('#totalAmount').val();
-                $('input, select, textarea').prop('disabled', true);
-                
-            } else {
-                alert('Failed to fetch item details.');
-            }
-
-        },
-        error: function(xhr, status, error) {
-            console.error(xhr);
-            alert('AJAX Error: ' + status + ' - ' + error);
-        }
+     getJobOrder(jobId,btn);           
+         
     });
-});
 

@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-6 d-flex flex-column justify-content-between">
                             <fieldset class=" additional-info border rounded-3 p-4 mb-2 ">
-                                <legend class="float-none w-auto px-3 fs-6 fw-medium">Additional Information</legend>
+                                <legend class="float-none w-auto px-3 fs-6 fw-medium">Other Information</legend>
                                 <div class="mb-2" id="selectOptions"> 
                                     <div>
                                         <label for="technician">Technician:</label>
@@ -88,23 +88,9 @@
                                             <option value="Claimed">Claimed</option>
                                         </select>
                                     </div>
-                                   
+                                    
                                 </div>
-                                <div class="mb-2">
-                                    <label for="start_date"> Start Date:</label>
-                                    <input type="date" id="start_date" name="start_date" required >
-
-                                    <label for="finished_date">Date Finished:</label>
-                                    <input type="date" id="finished_date" name="finished_date" >
-                                </div>
-
-                                <div class="mb-2" id="time"  >
-                                    <label for="time_in">Time-In:</label>
-                                    <input type="time" id="time_in" name="time_in" required>
-
-                                    <label for="time_out">Time-Out:</label>
-                                    <input type="time" id="time_out" name="time_out" >
-                                </div>
+                                
                                 <div class="radio-btn" id="radioBtn">
                                     <div id="warrantyWrapper">
                                         <div >
@@ -268,3 +254,4 @@
 <script src="js/deleteJobOrder.js"></script>
 <script src="js/updateJobOrder.js"></script>
 <script src="js/viewJobOrder.js"></script>
+<script src="js/fetchJobOrder.js"></script>

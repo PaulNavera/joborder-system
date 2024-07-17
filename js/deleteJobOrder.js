@@ -9,8 +9,8 @@ $('#confirmDeleteBtn').on('click', function() {
     var jobId = $('#deleteJobOrderModal').data('jobOrderId');
 
     $.ajax({
-        type: 'POST',
         url: 'delete_joborder.php', 
+        type: 'POST',
         data: { jobId: jobId },
         dataType: 'json',
         success: function(response) {
@@ -25,7 +25,6 @@ $('#confirmDeleteBtn').on('click', function() {
             }
         },
         error: function(xhr, status, error) {
-            console.error(xhr.responseText);
              alertify.error("An error occurred while deleting the item. Please try again.");
         }
     });
