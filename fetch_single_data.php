@@ -5,10 +5,11 @@ $jobOrderId = $_POST['job_order_id'];
 
 try {
 
-    $query = "SELECT c.job_order_id,c.company, c.name, c.address, c.contact, c.email, c.messenger, c.site,c.time_in, c.time_out, c.start_date, c.finished_date, u.unit, u.brand, u.model, u.serial, u.warranty, u.status,u.reports_instructions,ch.service_charge, ch.transportation_charge, ch.allowance, ch.other_charges 
+    $query = "SELECT c.job_order_id,c.company, c.name, c.address, c.contact, c.email, c.messenger, c.site,c.time_in, c.time_out, c.start_date, c.finished_date, u.unit, u.brand, u.model, u.serial, u.warranty, t.technician_name , u.status,u.reports_instructions,ch.service_charge, ch.transportation_charge, ch.allowance, ch.other_charges
                FROM customers c
                LEFT JOIN units u ON c.job_order_id = u.job_order_id
                LEFT JOIN charges ch ON c.job_order_id = ch.job_order_id
+               LEFT JOIN technicians t ON c.job_order_id = t.job_order_id
                WHERE c.job_order_id = :job_order_id";
     $stmt = $pdo->prepare($query);
 
@@ -42,6 +43,7 @@ try {
             'model' => $row['model'],
             'serial' => $row['serial'],
             'warranty' => $row['warranty'],
+            'technician' => $row['technician_name'],
             'status' => $row['status'],
             'reports_instructions' => $row['reports_instructions'],
             'service_charge' => $row['service_charge'],

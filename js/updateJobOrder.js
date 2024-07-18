@@ -7,7 +7,7 @@ $(document).ready(function(){
 $('#joborderTable tbody').on('click', '.editBtn', function() {
     const jobId = $(this).data('id');
     const btn = 'Edit';
-
+    $('#jobId').val(jobId); 
     getJobOrder(jobId,btn);            
 
     });

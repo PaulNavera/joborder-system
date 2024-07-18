@@ -10,6 +10,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form id="jobOrderForm" method="post">
+        <input type="hidden" id="jobId" name="jobId"> 
         <div class="modal-body">
             <div id="errorMessageUpdate" class="alert alert-warning d-none"></div>
 
@@ -76,8 +77,8 @@
                                         <label for="technician">Technician:</label>
                                         <select name="technician" id="technician" required>
                                             <option value="" disabled selected>Select</option>
-                                            <option value="Paul Aldrin">Paul Aldrin Navera</option>
-                                            <option value="Reginald">Reginald Jesse De Guzman</option>
+                                            <option value="Paul Aldrin Navera">Paul Aldrin Navera</option>
+                                            <option value="Reginald Jesse De Guzman">Reginald Jesse De Guzman</option>
                                         </select>
                                     </div>
                                     <div>
@@ -255,3 +256,4 @@
 <script src="js/updateJobOrder.js"></script>
 <script src="js/viewJobOrder.js"></script>
 <script src="js/fetchJobOrder.js"></script>
+<script src="js/submitForm.js"></script>

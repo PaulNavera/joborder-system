@@ -50,10 +50,7 @@ $.ajax({
             $('#model').val(response[0].model);
             $('#serial').val(response[0].serial);
             $('#reportsInstructions').val(response[0].reports_instructions);
-            $('#start_date').val(response[0].start_date);
-            $('#finished_date').val(response[0].finished_date);
-            $('#time_in').val(response[0].time_in);
-            $('#start_date').val(response[0].start_date);
+           
             $('#serviceCharge').val(response[0].service_charge);
             $('#transportationCharge').val(response[0].transportation_charge);
             $('#lodgingAllowance').val(response[0].allowance);
