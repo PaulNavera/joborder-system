@@ -10,8 +10,10 @@
     <div class="container">
         <div class="d-flex justify-content-between align-item-center">
             
-            <div class="buttons d-flex mb-3">
+            <div class="buttons d-flex mb-3" style="gap: 10px;">
                 <button class="btn btn-success"  id="addJobOrderBtn"><i class="fa-solid fa-plus"></i>Add</button>
+                <button class="btn btn-secondary"  id="exportBtn"><i class="fa-solid fa-file-export"></i>Export</button>
+                <button class="btn btn-primary "  id="printBtn"><i class="fa-solid fa-print"></i></button>
             </div>
         </div>
         <div class="table-responsive">

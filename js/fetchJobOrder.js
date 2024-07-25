@@ -21,7 +21,9 @@ $.ajax({
                 $('#technician').replaceWith(tech);
                 $('#status').replaceWith(status);
                 $('#warranty').val(response[0].warranty);
-                $('#site').val(response[0].site);                
+                $('#site').val(response[0].site); 
+                $('input').css('font-style', 'italic');
+                $('#other-info input').css('width', '60%');
                 $('input, select, textarea').prop('disabled', true);
  
             }
@@ -32,6 +34,9 @@ $.ajax({
                  const site = response[0].site === 'In-House'?'in_house':'on_site';
                  $(`#${warranty}`).prop('checked', true);
                  $(`#${site}`).prop('checked', true);
+                 $('#technician').val(response[0].technician);
+                 $('#status').val(response[0].status);
+
 
             }
            
@@ -50,7 +55,6 @@ $.ajax({
             $('#model').val(response[0].model);
             $('#serial').val(response[0].serial);
             $('#reportsInstructions').val(response[0].reports_instructions);
-           
             $('#serviceCharge').val(response[0].service_charge);
             $('#transportationCharge').val(response[0].transportation_charge);
             $('#lodgingAllowance').val(response[0].allowance);

@@ -18,6 +18,8 @@ $reports_instructions = $_POST['reportsInstructions'];
 $technician = $_POST['technician'];
 $start_date = $_POST['start_date'];
 $time_in = $_POST['time_in'];
+$finished_date = $_POST['finished_date'];
+$time_out = $_POST['time_out'];
 $warranty = $_POST['warranty'];
 $site = $_POST['site'];
 $service_charge = $_POST['serviceCharge'];
@@ -34,7 +36,7 @@ try {
     $pdo->beginTransaction();
 
     // Insert into customers table
-    $query = "INSERT INTO customers(job_order_id,company,name,address,contact,email,messenger,site,time_in,start_date)VALUES(NULL,:company,:name,:address,:contact,:email,:messenger,:site ,:time_in,:start_date)";
+    $query = "INSERT INTO customers(job_order_id,company,name,address,contact,email,messenger,site,time_in,start_date,time_out, finished_date)VALUES(NULL,:company,:name,:address,:contact,:email,:messenger,:site ,:time_in,:start_date,:time_out, :finished_date)";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':company', $company);
     $stmt->bindParam(':name', $name);
@@ -45,6 +47,8 @@ try {
     $stmt->bindParam(':site', $site);
     $stmt->bindParam(':time_in', $time_in);
     $stmt->bindParam(':start_date', $start_date);
+    $stmt->bindParam(':time_out', $time_in);
+    $stmt->bindParam(':finished_date', $start_date);
     if (!$stmt->execute()) {
         throw new Exception("Failed to insert into customers table.");
     }

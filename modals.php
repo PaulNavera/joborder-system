@@ -70,7 +70,7 @@
                             </fieldset>
                         </div>
                         <div class="col-6 d-flex flex-column justify-content-between">
-                            <fieldset class=" additional-info border rounded-3 p-4 mb-2 ">
+                            <fieldset class=" additional-info border rounded-3 p-4 mb-2" id="other-info">
                                 <legend class="float-none w-auto px-3 fs-6 fw-medium">Other Information</legend>
                                 <div class="mb-2" id="selectOptions"> 
                                     <div>
@@ -257,3 +257,4 @@
 <script src="js/viewJobOrder.js"></script>
 <script src="js/fetchJobOrder.js"></script>
 <script src="js/submitForm.js"></script>
+<script src="js/printClaimStub.js"></script>

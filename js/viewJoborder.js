@@ -53,6 +53,11 @@ $(document).ready(function(){
         $('#selectOptions').replaceWith(selectOptions);
         $('#radioBtn').replaceWith(radioBtn);
         $('#addPartsButton').show();
+        $('#date').remove();
+        $('#time').remove();
+        $('input').css('font-style', 'normal');
+
+
 
     });
 });
@@ -62,6 +67,7 @@ $('#joborderTable tbody').on('click', '.viewBtn', function() {
     const jobId = $(this).data('id');
     const btn = 'View';
     
+
     const radioBtn = ` <div class="radio-btn" id="radioBtn">
                                     <div id="warrantyWrapper">
                                         <label for="warranty">Warranty:</label>
@@ -73,7 +79,30 @@ $('#joborderTable tbody').on('click', '.viewBtn', function() {
                                     </div>
                         </div>`;
     
+    const time = ` <div class="time" id="time">
+                                    <div>
+                                        <label for="time-in">Time-in:</label>
+                                        <input type="text" id="time-in" name="time-in">
+                                    </div>
+                                    <div>
+                                        <label for="time-out">Time-out:</label>
+                                        <input type="text" id="time-out" name="time-out">
+                                    </div>
+                    </div>`;
+    const date = ` <div class="date" id="date">
+                                <div>
+                                    <label for="start-date">Start date:</label>
+                                    <input type="text" id="start-date" name="start-date">
+                                </div>
+                                <div>
+                                    <label for="finished-date">Finished date:</label>
+                                    <input type="text" id="finished-date" name="finished-date">
+                                </div>
+                    </div>`;
+    
     $('#radioBtn').replaceWith(radioBtn);
+    $('#radioBtn').after(date);
+    $('#date').after(time);
 
 
      getJobOrder(jobId,btn);           

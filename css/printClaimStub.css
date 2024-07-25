@@ -1,0 +1,122 @@
+
+.wrapper{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    background: url('../assets/claim_stub.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #747171;
+}
+.col1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    gap: 30px;
+    width: 69%;
+    height: 92%;
+}
+.col2{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 31%;
+    height: 92%;
+}
+label{
+    font-weight: bold;
+}
+span{
+    font-size: 100px;
+}
+
+.row1{
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+.row2{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+@media print {
+    * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    -webkit-print-color-adjust: exact !important;
+    }
+    
+    .wrapper{
+        display: flex;
+        width: 100%;
+        height: 25%;
+        background: url('../assets/claim_stub.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+    }
+
+    input{
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #747171;
+        width: 100px;
+    }
+    #name{
+        width: 150px;
+    }
+    #unit{
+        width: 120px;
+    }
+    .col1{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        padding-top: 10%;
+        gap: 30px;
+        width: 69%;
+        height: 92%;
+        border: 1px solid blue;
+    }
+    .col2{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        width: 31%;
+        height: 92%;
+        border: 1px solid red;
+
+    }
+    label{
+        font-weight: bold;
+        font-size: 12pt;
+    }
+    span{
+        font-size: 50pt;
+    }
+
+    .row1{
+        display: flex;
+        justify-content: space-between;
+    
+
+    }
+    .row2{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+}

@@ -1,6 +1,8 @@
 $(document).ready(function(){
     $('#jobOrderModal').on('hidden.bs.modal', function () {
         $('#jobOrderForm')[0].reset();
+        const jobOrderID = $('#jobId').val("");                      
+
     });
 });
 

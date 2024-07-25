@@ -9,7 +9,8 @@ $(document).on('submit', '#jobOrderForm', function(e){
     let warranty = $('input[name="warranty"]:checked').val();
     let technician = $("#technician").val();
     let status = $("#status").val();
-
+    let finishedDate = '';
+    let timeOut ='';
     let dateTime = new Date();
     let startDate = `${dateTime.getFullYear()}-${dateTime.getMonth()}-${dateTime.getDate()}`;
     let timeIn = `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()}`;
@@ -18,13 +19,22 @@ $(document).on('submit', '#jobOrderForm', function(e){
     
     const url = jobOrderID?'update_joborder.php':'add_joborder.php'
 
+    if(status!=='Under Repair'){
+         finishedDate = `${dateTime.getFullYear()}-${dateTime.getMonth()}-${dateTime.getDate()}`;
+         timeOut = `${dateTime.getHours()}:${dateTime.getMinutes()}:${dateTime.getSeconds()}`;
+    } 
+  
+
     formData.append("jobId",jobOrderID);
     formData.append("site",site);
     formData.append("warranty",warranty);
     formData.append("technician",technician);
     formData.append("status",status);
     formData.append("start_date",startDate);
-    formData.append("time_in",timeIn);
+    formData.append("time_in",timeIn); 
+    formData.append("finished_date",finishedDate);
+    formData.append("time_out",timeOut);
+    
     formData.append("parts",JSON.stringify(parts));
 
     console.log(url);
@@ -44,7 +54,7 @@ $(document).on('submit', '#jobOrderForm', function(e){
                     alertify.success("Job Order saved!");                       
                     $('#joborderTable').DataTable().ajax.reload();
                     $('#jobOrderModal').modal('hide');
-                    //printPDF(response);
+                    printClaimStub(response);
 
                 }
                 else{
