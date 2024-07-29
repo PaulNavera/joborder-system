@@ -1,8 +1,4 @@
-<link rel="stylesheet" href="./css/printClaimStub.css">
-<link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
-
-
-<div class="wrapper" id="claimStub" hidden>
+<div class="wrapper" id="claimStub" >
     <div class="col1"> 
         <div class="row1">
             <div>

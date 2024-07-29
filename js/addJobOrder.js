@@ -10,8 +10,6 @@ $(document).ready(function(){
         $('#jobOrderModal').modal('show');
         $('#ModalLabel').text("Add Job Order");
        
-
-    
     });
 
     $('#jobOrderModal').on('hidden.bs.modal', function () {
@@ -101,26 +99,3 @@ function getParts(){
 
         }
 
-function printPDF(data){
-        
-        let jsonData = JSON.stringify(data);
-            $.ajax({
-                url:"generate_pdf.php",
-                type: 'POST',
-                data: jsonData,
-                contentType: 'application/json',
-                success:function(response)
-                {
-                    
-                },
-                error: function(xhr, status, error){
-                    console.error(`'Error:  ${error}`);
-                }
-                
-        
-        
-                
-            });
-        
-        } 
-    
