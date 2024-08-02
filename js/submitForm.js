@@ -54,7 +54,7 @@ $(document).on('submit', '#jobOrderForm', function(e){
                     alertify.success("Job Order saved!");                       
                     $('#joborderTable').DataTable().ajax.reload();
                     $('#jobOrderModal').modal('hide');
-                    printClaimStub(response);
+                    !jobOrderID?printClaimStub(response):null;
 
                 }
                 else{

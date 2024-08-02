@@ -2,7 +2,7 @@
 
 include("dbcon.php");
 
-$jobOderId = $_POST['jobId'];
+$jobOrderId  = $_POST['jobId'];
 
 $response = array();
 
@@ -18,7 +18,7 @@ try {
 
     foreach ($deleteQueries as $query) {
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':jobId', $jobOderId, PDO::PARAM_INT);
+        $stmt->bindParam(':jobId', $jobOrderId , PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -26,7 +26,7 @@ try {
 
     $response = [
         'success' => true,
-        'message' => 'Job order[#'.$jobOderId.'] deleted successfully.'
+        'message' => 'Job order[#'.$jobOrderId .'] deleted successfully.'
     ];
 } catch (PDOException $e) {
 

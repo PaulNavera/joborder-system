@@ -21,23 +21,23 @@
                                 <legend class="float-none w-auto px-3 fs-6 fw-medium ">Customer Information</legend>
                                 <div>
                                     <label for="company">Company:</label>
-                                    <input type="text"  id="company" name="company" >
+                                    <input type="text"  id="company" name="company" autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
+                                    <input type="text" id="name" name="name" required autocomplete="off">
                                 </div>
                                 <div>
                                     <label for="address">Address:</label>
-                                    <input type="text" id="address" name="address" required>
+                                    <input type="text" id="address" name="address" required autocomplete="off">
                                 </div>
                                 <div>
                                 <label for="contact">Contact No.:</label>
-                                    <input type="tel" id="contact" name="contact" required> 
+                                    <input type="tel" id="contact" name="contact" required autocomplete="off"> 
                                 </div>
                                 <div>
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" >
+                                    <input type="email" id="email" name="email" autocomplete="off">
                                 </div>
                             <div>
                                     <label for="messenger">Messenger/Facebook:</label>
@@ -77,8 +77,9 @@
                                         <label for="technician">Technician:</label>
                                         <select name="technician" id="technician" required>
                                             <option value="" disabled selected>Select</option>
-                                            <option value="Paul Aldrin Navera">Paul Aldrin Navera</option>
                                             <option value="Reginald Jesse De Guzman">Reginald Jesse De Guzman</option>
+                                            <option value="Paul Aldrin Navera">Paul Aldrin Navera</option>
+                                            <option value="Francis Balbedina">Francis Balbedina</option>
                                         </select>
                                     </div>
                                     <div>
@@ -158,7 +159,7 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex justify-content-end">
-                                    <button class="btn btn-success add-button" id="addPartsButton"><i class="fa-regular fa-plus "></i></button>
+                                    <button type="button" class="btn btn-success add-button" id="addPartsButton"><i class="fa-regular fa-plus "></i></button>
                                 </div>
                             </fieldset>
                             <fieldset class="charges border rounded-3 p-4 mb-2">
@@ -215,9 +216,9 @@
                             </fieldset>  
                         </div>
                     </div>
-                    <div class="modal-footer">        
+                    <div class="modal-footer" id="footerBtn" >        
                         <button type="submit" id="saveButton" class="btn btn-primary" >Save</button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"  id="cancelBtn">Cancel</button>
                     </div>
                 
 
@@ -230,22 +231,22 @@
 
 <!-- Delete  Modal -->
 <div class="modal fade" id="deleteJobOrderModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-        <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm Delete</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="deleteModalLabel">Confirm Delete</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                     <div class="modal-body" id="modalBody">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+                    <div class="modal-footer">                        
+                        <button type="button" class="btn btn-danger" id="confirmDelBtn" >Delete</button>
+                        <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal" id="cancelBtn">Cancel</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+</div>
 
 
 <script src="jquery/jquery-3.7.1.min.js"></script>  

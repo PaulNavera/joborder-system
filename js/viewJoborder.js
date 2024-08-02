@@ -5,10 +5,11 @@ $(document).ready(function(){
         const selectOptions =`<div class="mb-2" id="selectOptions"> 
                                     <div>
                                         <label for="technician">Technician:</label>
-                                        <select name="technician" id="technician" required>
+                                         <select name="technician" id="technician" required>
                                             <option value="" disabled selected>Select</option>
-                                            <option value="Paul Aldrin">Paul Aldrin Navera</option>
-                                            <option value="Reginald">Reginald Jesse De Guzman</option>
+                                            <option value="Reginald Jesse De Guzman">Reginald Jesse De Guzman</option>
+                                            <option value="Paul Aldrin Navera">Paul Aldrin Navera</option>
+                                            <option value="Francis Balbedina">Francis Balbedina</option>
                                         </select>
                                     </div>
                                     <div>
@@ -56,6 +57,8 @@ $(document).ready(function(){
         $('#date').remove();
         $('#time').remove();
         $('input').css('font-style', 'normal');
+        $('#saveButton').show();
+        $('#cancelBtn').text("Cancel");
 
 
 
@@ -66,7 +69,8 @@ $(document).ready(function(){
 $('#joborderTable tbody').on('click', '.viewBtn', function() {
     const jobId = $(this).data('id');
     const btn = 'View';
-    
+    console.log("view");
+
 
     const radioBtn = ` <div class="radio-btn" id="radioBtn">
                                     <div id="warrantyWrapper">
@@ -103,9 +107,10 @@ $('#joborderTable tbody').on('click', '.viewBtn', function() {
     $('#radioBtn').replaceWith(radioBtn);
     $('#radioBtn').after(date);
     $('#date').after(time);
+    $('#saveButton').hide();
+    $('#cancelBtn').text("OK");
 
-
-     getJobOrder(jobId,btn);           
+    getJobOrder(jobId,btn);           
          
     });
 

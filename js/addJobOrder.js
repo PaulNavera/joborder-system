@@ -4,9 +4,6 @@ $(document).ready(function(){
 
     $('#addJobOrderBtn').click(function(){
 
-        
-        
-
         $('#jobOrderModal').modal('show');
         $('#ModalLabel').text("Add Job Order");
        
@@ -14,6 +11,14 @@ $(document).ready(function(){
 
     $('#jobOrderModal').on('hidden.bs.modal', function () {
         $('#jobOrderForm')[0].reset();
+        
+        let rowCount = $("#partsTable tbody tr").length;
+
+        if(rowCount>5){
+            for(let i=rowCount;i>5;i--){
+                $('#partsTable tr:last').remove()
+            }
+        }
 
     });
 });
@@ -55,9 +60,8 @@ $(document).ready(function(){
 
 
 $(".parts").change(function(){
-            let rowCount = $("#partsTable tbody tr").length/3;
+            let rowCount = $("#partsTable tbody tr").length;
             let totalParts = 0;
-        
             for(let i = 1; i <= rowCount; i++) {
 
                 if($(`#qty${i}`).val()!=='' && $(`#amount${i}`).val()!==''){
