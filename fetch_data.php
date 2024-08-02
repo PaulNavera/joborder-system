@@ -83,7 +83,6 @@ try{
 
         $data[] = array(
             'job_order_id' => $row['job_order_id'],
-            'company' => $row['company'],
             'name' => $row['name'],
             'address' => $row['address'],
             'contact' => $row['contact'],
@@ -94,9 +93,9 @@ try{
             'brand' =>  $row['brand'],
             'warranty' => $row['warranty'],
             'status' =>  $row['status'],
-            'action' => '<button type="button" class="btn btn-info btn-sm viewBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-eye"></i></button>' .
-            ' <button type="button" class="btn btn-primary btn-sm editBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-pen-to-square"></i></button>' .
-            ' <button type="button" class="btn btn-danger btn-sm deleteBtn" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-trash"></i></button>'
+            'action' => '<button type="button" class="btn btn-info btn-sm viewBtn" data-bs-toggle="tooltip" data-bs-placement="top" title="view" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-eye"></i></button>' .
+            ' <button type="button" class="btn btn-primary btn-sm editBtn " data-bs-toggle="tooltip" data-bs-placement="top" title="edit" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-pen-to-square"></i></button>' .
+            ' <button type="button" class="btn btn-danger btn-sm deleteBtn" data-bs-toggle="tooltip" data-bs-placement="top" title="delete" data-id="' . $row['job_order_id'] . '"><i class="fa-solid fa-trash"></i></button>'
 
         );
     }

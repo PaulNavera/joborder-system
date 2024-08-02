@@ -6,7 +6,6 @@ $(document).ready(function() {
                    
                     "columns": [
                         {"data": "job_order_id"},
-                        {"data": "company"},
                         {"data": "name"},
                         {"data": "address"},
                         {"data": "contact"},

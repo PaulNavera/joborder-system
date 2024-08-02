@@ -65,7 +65,7 @@
                             
                             </fieldset>
                             <fieldset class="border rounded-3 p-4 mb-2 ">
-                                <legend class="float-none w-auto px-3 fs-6 fw-medium">Client's Report and Intruction</legend>
+                                <legend class="float-none w-auto px-3 fs-6 fw-medium">Client's Report and Instruction</legend>
                                 <textarea id="reportsInstructions" name="reportsInstructions" rows="4" cols="" class="w-100 p-1"></textarea>
                             </fieldset>
                         </div>

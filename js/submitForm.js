@@ -37,7 +37,6 @@ $(document).on('submit', '#jobOrderForm', function(e){
     
     formData.append("parts",JSON.stringify(parts));
 
-    console.log(url);
 
     $.ajax({
             url: url,

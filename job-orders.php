@@ -22,7 +22,6 @@
                 <thead class="table-primary">
                     <tr class=" text-center"> 
                         <th scope="col">Job Order ID</th>
-                        <th scope="col">Company</th>
                         <th scope="col">Name</th>
                         <th scope="col">Address</th>
                         <th scope="col">Contact #</th>

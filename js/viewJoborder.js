@@ -45,9 +45,7 @@ $(document).ready(function(){
                                 </div>
                             </div>
                         </div>`;
-
-
-                        
+         
                         
         $('#jobOrderForm')[0].reset();
         $('input, select, textarea').prop('disabled', false);
@@ -63,13 +61,12 @@ $(document).ready(function(){
 
 
     });
-});
-
+    
+ 
 
 $('#joborderTable tbody').on('click', '.viewBtn', function() {
     const jobId = $(this).data('id');
     const btn = 'View';
-    console.log("view");
 
 
     const radioBtn = ` <div class="radio-btn" id="radioBtn">
@@ -103,14 +100,24 @@ $('#joborderTable tbody').on('click', '.viewBtn', function() {
                                     <input type="text" id="finished-date" name="finished-date">
                                 </div>
                     </div>`;
+    const printBtn = `<button type="button" id="printFormBtn" class="btn btn-primary"><i class="fa-solid fa-print"></i></button>`
     
     $('#radioBtn').replaceWith(radioBtn);
     $('#radioBtn').after(date);
     $('#date').after(time);
-    $('#saveButton').hide();
-    $('#cancelBtn').text("OK");
+    $('#saveButton').replaceWith(printBtn);
+    $('#cancelBtn').text("Close");
 
     getJobOrder(jobId,btn);           
          
     });
+
+
+   $(document).off('click', '#printFormBtn').on('click', '#printFormBtn', function() {
+        window.print();
+});
+
+
+
+});
 
