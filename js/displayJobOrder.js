@@ -1,20 +1,43 @@
-function displayJobOrder(response){
+function displayJobOrder(data){
+
+       
+        const parts = data.parts;
+        let totalPartsAmount = 0; 
+
+        if(parts){
+
+         totalPartsAmount = parts.reduce((accumulator, part)=>{
+                        return accumulator + part.amount;
+                },0);
+        }
+        
+        parts.map((part,i)=>{
+
+                $(`#qty${i+1}`).val(part.quantity);
+                $(`#item${i+1}`).val(part.item);
+                $(`#amount${i+1}`).val(part.amount);
+
+        })
+
+        const totalAmount = totalPartsAmount + data.service_charge + data.transportation_charge + data.allowance + data.other_charges;
+
 
         $('#jobOrderModal').modal('show');               
-        $('#company').val(response[0].company);
-        $('#name').val(response[0].name);
-        $('#address').val(response[0].address);
-        $('#contact').val(response[0].contact);
-        $('#email').val(response[0].email);
-        $('#messenger').val(response[0].messenger);
-        $('#unit').val(response[0].unit);
-        $('#brand').val(response[0].brand);
-        $('#model').val(response[0].model);
-        $('#serial').val(response[0].serial);
-        $('#reportsInstructions').val(response[0].reports_instructions);
-        $('#serviceCharge').val(response[0].service_charge);
-        $('#transportationCharge').val(response[0].transportation_charge);
-        $('#lodgingAllowance').val(response[0].allowance);
-        $('#otherCharges').val(response[0].other_charges);
-        $('#totalAmount').val();  
+        $('#company').val(data.company);
+        $('#name').val(data.name);
+        $('#address').val(data.address);
+        $('#contact').val(data.contact);
+        $('#email').val(data.email);
+        $('#messenger').val(data.messenger);
+        $('#unit').val(data.unit);
+        $('#brand').val(data.brand);
+        $('#model').val(data.model);
+        $('#serial').val(data.serial);
+        $('#reportsInstructions').val(data.reports_instructions);
+        $('#totalPartsAmount').val(totalPartsAmount);
+        $('#serviceCharge').val(data.service_charge);
+        $('#transportationCharge').val(data.transportation_charge);
+        $('#lodgingAllowance').val(data.allowance);
+        $('#otherCharges').val(data.other_charges);
+        $('#totalAmount').val(totalAmount);  
 }

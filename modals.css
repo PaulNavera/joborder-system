@@ -14,6 +14,8 @@ input:not([type=radio]):not([type=submit]){
     border-bottom: 1px solid #747171;
     text-align: center;
     width: 70%;
+    font-size: 12px;
+    font-weight: 400;
     
 }
 input[type=date],input[type=time]{
@@ -64,4 +66,8 @@ table input{
 .ViewPartsTable td{
     max-width: 200px;
     height: 15px; 
+}
+label{
+    font-size: 12px;
+    font-weight: 500;
 }

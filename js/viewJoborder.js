@@ -37,15 +37,15 @@ $('#joborderTable tbody').off('click', '.viewBtn').on('click', '.viewBtn', funct
                                     <input type="text" id="finished-date" name="finished-date">
                                 </div>
                     </div>`;
-    const printBtn = `<button type="button" id="printFormBtn" class="btn btn-primary"><i class="fa-solid fa-print"></i></button>`;
+    const printBtn = `<button type="button" style="padding:10px" id="printFormBtn" class="btn btn-primary"><i class="fa-solid fa-print"></i></button>`;
    
     
     (async () => {
         try {
             const response = await getJobOrder(jobId);
-            
-                    const tech = $('<input type="text" id="technician" />').val(response[0].technician);
-                    const status = $('<input type="text" id="status" />').val(response[0].status);
+            const data = response[0];
+                    const tech = $('<input type="text" id="technician" />').val(data.technician);
+                    const status = $('<input type="text" id="status" />').val(data.status);
                     
                     $('#ModalLabel').text(`View Job Order [#${jobId}]`);
                     $('#radioBtn').replaceWith(radioBtn);
@@ -56,12 +56,12 @@ $('#joborderTable tbody').off('click', '.viewBtn').on('click', '.viewBtn', funct
                     $('#addPartsButton').hide();
                     $('#technician').replaceWith(tech);
                     $('#status').replaceWith(status);
-                    $('#warranty').val(response[0].warranty);
-                    $('#site').val(response[0].site); 
+                    $('#warranty').val(data.warranty);
+                    $('#site').val(data.site); 
                     $('#other-info input').css('width', '60%');
                     $('input, select, textarea').prop('disabled', true);
 
-                    displayJobOrder(response);
+                    displayJobOrder(data);
         } catch (error) {
             console.error(error);
         }

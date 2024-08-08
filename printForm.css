@@ -38,9 +38,7 @@ table td{
 footer span{
     font-size: 10px;
 }
-td:not(.label){
-    font-style: italic;
-}
+
 .label{
     border-right: none;
     font-weight: 500;

@@ -60,7 +60,7 @@
         <table id="unitTable" class="unit table-primary  w-100">
             <thead>
                 <tr >
-                    <th>Customer Information </th>
+                    <th colspan="">Customer Information </th>
                     <th>Unit Information </th>
                     <th style="width: 50%;">Job Details</th>
                 </tr>

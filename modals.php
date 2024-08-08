@@ -86,7 +86,7 @@
                                         <label for="status">Status:</label>
                                         <select name="status" id="status" required>
                                             <option value="Under Repair">Under Repair</option>
-                                            <option value="Claimable">Claimable</option>
+                                            <option value="Repaired">Repaired</option>
                                             <option value="Claimed">Claimed</option>
                                         </select>
                                     </div>
@@ -167,14 +167,12 @@
                                 <div>
                                     <label for="total-parts-amount">Total Parts/Consumable:</label>
                                     <div>
-                                        <i class="fa-solid fa-peso-sign"></i>  
                                         <input type="number" id="totalPartsAmount" name="totalPartsAmount" class="charge" disabled>                                          
                                     </div>
                                 </div>
                                 <div>
                                     <label for="service-charge">Service Charge:</label>
                                     <div>
-                                        <i class="fa-solid fa-peso-sign"></i>
                                         <input type="number" id="serviceCharge" name="serviceCharge" class="charge">
                                     </div>
                                     
@@ -182,7 +180,6 @@
                                 <div>
                                     <label for="transportation">Transportation and per diem:</label>
                                     <div>
-                                        <i class="fa-solid fa-peso-sign"></i>
                                         <input type="number" id="transportationCharge" name="transportationCharge" class="charge"> 
                                     </div>
                                     
@@ -190,23 +187,20 @@
                                 <div>
                                     <label for="lodging-allowance">Board and lodging allowance:</label>
                                     <div>
-                                        <i class="fa-solid fa-peso-sign"></i>
                                         <input type="number" id="lodgingAllowance" name="lodgingAllowance" class="charge" >
                                     </div>
                                 </div>
                                 <div>
                                     <label for="other-charges">Other Charges:</label>
                                     <div>
-                                        <i class="fa-solid fa-peso-sign"></i>
                                         <input type="number" id="otherCharges" name="otherCharges" class="charge" >
                                     </div>
                                     
                                 </div>
-                                <div>
-                                    <label for="total-amount">Total Amount:</label>
+                                <div style="border-top: 1px dashed #747171; margin-top:5px;padding-top:4px">
+                                    <label class="fw-bold" for="total-amount">Total Amount:</label>
                                     <div>
-                                        <i class="fa-solid fa-peso-sign"></i>
-                                        <input type="number" id="totalAmount" name="total-amount" class="charge" disabled>
+                                        <input style="border: none;" type="number" id="totalAmount" name="total-amount" class="charge fw-bold" disabled>
                                     </div>
                                     
                                 </div>

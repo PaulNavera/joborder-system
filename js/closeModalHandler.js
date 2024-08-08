@@ -60,6 +60,8 @@ const saveBtn =`<button type="submit" id="saveButton" class="btn btn-primary" >S
 $('#jobOrderModal').modal('hide');
 
 $('input, select, textarea').prop('disabled', false);
+$('#totalPartsAmount').prop('disabled', true);
+$('#totalAmount').prop('disabled', true);
 $('#selectOptions').replaceWith(selectOptions);
 $('#radioBtn').replaceWith(radioBtn);
 $('#cancelBtn').show();
@@ -72,7 +74,7 @@ $('#printFormBtn').replaceWith(saveBtn);
 $('#cancelBtn').text("Cancel");
 
 //Update
-const jobOrderID = $('#jobId').val("");                      
+$('#jobId').val("");                      
 
 
 });
