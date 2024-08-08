@@ -257,5 +257,8 @@
 <script src="js/updateJobOrder.js"></script>
 <script src="js/viewJobOrder.js"></script>
 <script src="js/fetchJobOrder.js"></script>
+<script src="js/displayJobOrder.js"></script>
 <script src="js/submitForm.js"></script>
 <script src="js/printClaimStub.js"></script>
+<script src="js/printForm.js"></script>
+<script src="js/closeModalHandler.js"></script>

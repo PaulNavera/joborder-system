@@ -1,3 +1,13 @@
+@media print {
+ 
+
+#jobOrderModal{
+    display: block;
+    width: 100%;
+}
+.modal-header{
+    display: none;
+}
 .close:hover{
     cursor: pointer;
     color: red;
@@ -64,4 +74,6 @@ table input{
 .ViewPartsTable td{
     max-width: 200px;
     height: 15px; 
+}
+
 }

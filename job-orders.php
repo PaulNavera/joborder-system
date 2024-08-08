@@ -20,7 +20,7 @@
         <div class="table-responsive">
             <table class="table table-bordered table-striped " id="joborderTable">
                 <thead class="table-primary">
-                    <tr class=" text-center"> 
+                    <tr class="fs-sm-6 text-center"> 
                         <th scope="col">Job Order ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Address</th>
@@ -48,10 +48,17 @@
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="jquery/jquery-3.7.1.min.js"></script>    
     <script src="DataTables/datatables.min.js"></script>
+    <script src="alertify/alertify.min.js"></script>
     <script src="js/fetchData.js"></script>
     <script src="js/deleteJobOrder.js"></script>
     <script src="js/updateJobOrder.js"></script>
     <script src="js/viewJobOrder.js"></script>
+    <script src="js/fetchJobOrder.js"></script>
+    <script src="js/displayJobOrder.js"></script>
+    <script src="js/submitForm.js"></script>
+    <script src="js/printClaimStub.js"></script>
+    <script src="js/printForm.js"></script>
+    <script src="js/closeModalHandler.js"></script>
 
 
     

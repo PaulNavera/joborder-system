@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 
     $('#addJobOrderBtn').click(function(){
@@ -9,23 +7,13 @@ $(document).ready(function(){
        
     });
 
-    $('#jobOrderModal').on('hidden.bs.modal', function () {
-        $('#jobOrderForm')[0].reset();
-        
-        let rowCount = $("#partsTable tbody tr").length;
-
-        if(rowCount>5){
-            for(let i=rowCount;i>5;i--){
-                $('#partsTable tr:last').remove()
-            }
-        }
-
-    });
+   
 });
-    let rowCount=5;
 
 
     $("#addPartsButton").click(function(){
+        
+        let rowCount = $("#partsTable tbody tr").length;
         rowCount++;
 
         let newQty = $("<td>").append( $("<input>").attr({ type: "number", id: "qty"+ rowCount, class:"parts"}));
@@ -92,14 +80,11 @@ function getParts(){
                 item: $('#item'+ i).val(),
                 amount: $('#amount'+ i).val()
                 }  
-
-            
         parts.push(part);
-
         }
             }
 
-            return parts;
+        return parts;
 
         }
 
